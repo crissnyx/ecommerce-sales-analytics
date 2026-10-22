@@ -1,66 +1,146 @@
 # Ecommerce Analytics & Churn SaaS
 
-<div align="center">
-
-![Release](https://img.shields.io/badge/release-v2.0.0-blue)
-![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.32-FF4B4B?logo=streamlit&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-5.18-3F4F75?logo=plotly&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?logo=docker&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Open_App-2ea44f?style=for-the-badge)](#)
-
-</div>
-
-Enterprise AI-powered sales intelligence and customer churn prediction platform designed for advanced e-commerce analytics and retention strategy.
-
----
+A modern analytics and churn prediction dashboard for e-commerce businesses. This project helps teams identify customers at risk, monitor revenue exposure, and prioritize retention actions based on customer behavior and sales data.
 
 ## Overview
 
-Ecommerce Analytics & Churn SaaS helps businesses identify customers at risk of churn, understand purchase patterns, and quantify revenue exposure before it happens.
+Ecommerce Analytics & Churn SaaS combines:
+- customer churn risk scoring
+- sales and revenue monitoring
+- department-level insights
+- CSV batch upload workflows
+- SaaS-style analytics dashboards
 
-The platform combines:
-- predictive churn analysis
-- business intelligence dashboards
-- customer segmentation insights
-- batch data upload workflows
-- actionable retention recommendations
+## Features
 
----
-
-## Key Features
-
-- AI-driven churn risk scoring
-- High, Medium, and Low risk customer classification
-- Department-level churn analysis
-- Revenue at Risk calculations
-- Batch CSV ingestion with backend processing
-- Interactive visualization dashboards
-- Responsive SaaS-style user experience
-
----
+- Batch CSV ingestion
+- Customer churn probability scoring
+- Risk segmentation (High / Medium / Low)
+- Department-level risk analysis
+- KPI dashboard
+- Search and filtering by customer ID
+- Interactive visualizations with Plotly
+- Streamlit-based SaaS interface
+- Modular project structure
 
 ## Tech Stack
 
-- Frontend & UI: Streamlit, Custom CSS
-- Data Processing: Python, Pandas, Scikit-learn
-- Visualization: Plotly Express
-- Deployment: Docker, Render
-
----
-
-## Getting Started
-
-### Prerequisites
-
 - Python 3.11+
-- Docker (optional)
-- Git
+- Streamlit
+- Pandas
+- Plotly
+- scikit-learn
+- Docker
 
-### Clone the repository
+## Project Structure
+
+```text
+ecommerce-sales-analytics/
+├── app/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── main.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── loader.py
+│   │   ├── preprocess.py
+│   │   └── schema.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── pipeline.py
+│   │   ├── train.py
+│   │   └── predict.py
+│   ├── services/
+│   │   ├── churn_service.py
+│   │   └── reporting.py
+│   └── utils/
+│       ├── validation.py
+│       └── formatting.py
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── models/
+├── tests/
+│   ├── test_loader.py
+│   └── test_preprocess.py
+├── .env.example
+├── Dockerfile
+├── requirements.txt
+├── README.md
+├── run.py
+└── .gitignore
+```
+
+## Quick Start
+
+### 1) Clone
 
 ```bash
-git clone [https://github.com/crissnyx/ecommerce-sales-analytics.git](https://github.com/crissnyx/ecommerce-sales-analytics.git)
+git clone https://github.com/crissnyx/ecommerce-sales-analytics.git
 cd ecommerce-sales-analytics
+```
+
+### 2) Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+Windows:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+### 3) Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4) Run the app
+
+```bash
+streamlit run app/main.py
+```
+
+or:
+
+```bash
+python run.py
+```
+
+## Expected CSV Format
+
+The app expects a CSV file with the following columns:
+
+```csv
+CUSTOMER ID,DEPARTMENT STORE,TOTAL SPEND,PURCHASES,AVG ORDER VALUE,TENURE DAYS,LAST PURCHASE DAYS,RETURNS,CANCELLATIONS
+```
+
+## Model Workflow
+
+1. Load customer data from CSV
+2. Validate required columns
+3. Clean and normalize data
+4. Build churn features
+5. Train a risk model
+6. Predict churn probability
+7. Display results in the dashboard
+
+## Roadmap
+
+- [x] dashboard foundation
+- [x] CSV upload flow
+- [x] KPI and visualizations
+- [x] modular project structure
+- [ ] production data validation
+- [ ] persistent storage
+- [ ] authentication
+- [ ] CI/CD and automated tests
+
+## License
+
+This project is licensed under the MIT License.

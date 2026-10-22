@@ -1,6 +1,13 @@
 """Schema definitions for customer analytics datasets."""
+<<<<<<< HEAD
 from dataclasses import dataclass, field
 
+=======
+
+from dataclasses import dataclass, field
+
+
+>>>>>>> origin/feat/project-structure
 @dataclass(frozen=True)
 class CustomerCSVSchema:
     required_columns: set[str] = field(
@@ -26,4 +33,9 @@ class CustomerCSVSchema:
         }
     )
 
+<<<<<<< HEAD
 CUSTOMER_SCHEMA = CustomerCSVSchema()
+=======
+
+CUSTOMER_SCHEMA = CustomerCSVSchema()
+>>>>>>> origin/feat/project-structure

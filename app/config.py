@@ -9,4 +9,8 @@ MODEL_PATH = MODELS_DIR / "churn_model.pkl"
 
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+<<<<<<< HEAD
 MODELS_DIR.mkdir(parents=True, exist_ok=True)
+=======
+MODELS_DIR.mkdir(parents=True, exist_ok=True)
+>>>>>>> origin/feat/project-structure
